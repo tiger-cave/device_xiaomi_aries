@@ -212,9 +212,10 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     libwifi-hal \
     libwpa_client \
+    wcnss_service \
+    wificond \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    wcnss_service
+    wpa_supplicant.conf
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
