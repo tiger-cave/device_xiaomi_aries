@@ -7,6 +7,7 @@ persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.fluence.speaker=true
 qcom.hw.aac.encoder=true
 ro.vendor.audio.sdk.fluencetype=none
+ro.config.vc_call_vol_steps=7
 
 # Dalvik heap
 dalvik.vm.heapstartsize=8m
