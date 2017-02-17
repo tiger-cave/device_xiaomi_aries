@@ -2641,7 +2641,7 @@ int QCameraHardwareInterface::initHeapMem( QCameraHalHeap_t *heap,
             }
         }
 #endif
-        heap->camera_memory[i] =  mGetMemory( heap->fd[i], buf_len, 1, (void *)this);
+        heap->camera_memory[i] =  mGetMemory( heap->fd[i], buf_len, 1, mCallbackCookie);
 
         if (heap->camera_memory[i] == NULL ) {
             ALOGE("Getmem fail %d: ", i);
