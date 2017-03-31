@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     tinymix
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8960 \
