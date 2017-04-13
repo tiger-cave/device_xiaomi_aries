@@ -517,7 +517,7 @@ service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
-    group bluetooth net_bt_admin system
+    group bluetooth system
     disabled
     oneshot
 
@@ -530,13 +530,13 @@ on property:bluetooth.hciattach=false
 service bt-dun /system/bin/sh /system/etc/init.qcom.btdun.sh
     class late_start
     user bluetooth
-    group bluetooth net_bt_admin inet
+    group bluetooth inet
     disabled
     oneshot
 
 service bt-sap /system/bin/sapd 15
     user bluetooth
-    group bluetooth net_bt_admin
+    group bluetooth
     class late_start
     disabled
     oneshot
