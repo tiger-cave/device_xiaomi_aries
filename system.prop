@@ -78,7 +78,6 @@ ro.gps.agps_provider=1
 
 # Media
 media.stagefright.use-awesome=true
-persist.media.treble_omx=false
 
 camera2.portability.force_api=1
 
