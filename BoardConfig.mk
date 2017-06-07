@@ -171,6 +171,9 @@ TARGET_REMOVE_SECDISCARD_COMMAND := true
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
+# Use mke2fs to create ext4 images
+TARGET_USES_MKE2FS := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
