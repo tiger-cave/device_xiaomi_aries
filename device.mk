@@ -23,7 +23,7 @@ LOCAL_PATH := device/xiaomi/aries
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/rootdir/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
 # Audio
 PRODUCT_COPY_FILES += \
