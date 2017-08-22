@@ -96,12 +96,15 @@ BOARD_HAVE_QCOM_FM              := true
 QCOM_FM_ENABLED                 := true
 TARGET_FM_LEGACY_PATCHLOADER    := true
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8960
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_msm8960.cpp
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_msm8960.cpp
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
