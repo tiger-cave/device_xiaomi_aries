@@ -171,6 +171,10 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefrighthw
 
+# Perf
+PRODUCT_PACKAGES += \
+    libshims_atomic
+
 # Power
 PRODUCT_PACKAGES += \
     power.msm8960
