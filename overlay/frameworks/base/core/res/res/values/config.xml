@@ -256,4 +256,8 @@
         <item>hspa:4094,87380,704512,4096,16384,110208</item>
         <item>hsupa:4094,87380,704512,4096,16384,110208</item>
     </string-array>
+
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
 </resources>
