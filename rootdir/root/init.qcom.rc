@@ -805,7 +805,7 @@ service battery_monitor /system/bin/battery_monitor
     group system
     disabled
 
-service wcnss-service /system/bin/wcnss_service
+service wcnss-service /vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
