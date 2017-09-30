@@ -109,8 +109,6 @@ vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
 
 # Media
-lib/libI420colorconvert.so:vendor/lib/libI420colorconvert.so
-lib/libmm-color-convertor.so:vendor/lib/libmm-color-convertor.so
 lib/libmmipl.so:vendor/lib/libmmipl.so
 lib/libmmjps.so:vendor/lib/libmmjps.so
 lib/libmmmpo.so:vendor/lib/libmmmpo.so
