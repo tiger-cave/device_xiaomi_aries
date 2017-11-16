@@ -80,7 +80,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 
-
 # Camera
 BOARD_GLOBAL_CFLAGS                         += -DQCOM_BSP
 USE_DEVICE_SPECIFIC_CAMERA                  := true
@@ -98,6 +97,9 @@ OVERRIDE_RS_DRIVER              := libRSDriver_adreno.so
 USE_OPENGL_RENDERER             := true
 TARGET_USES_C2D_COMPOSITION     := true
 TARGET_USES_ION                 := true
+
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # FM
 BOARD_HAVE_QCOM_FM              := true
