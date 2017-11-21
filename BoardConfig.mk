@@ -14,12 +14,15 @@
 # limitations under the License.
 #
 # inherit from qcom-common
--include device/xiaomi/msm8960-common/BoardConfigCommon.mk
-
 LOCAL_PATH := device/xiaomi/aries
 
-TARGET_BOOTLOADER_NAME       := aries
-TARGET_BOARD_INFO_FILE       := $(LOCAL_PATH)/board-info.txt
+TARGET_NO_RADIOIMAGE              := true
+TARGET_NO_BOOTLOADER.             := true
+TARGET_BOOTLOADER_NAME            := aries
+TARGET_BOARD_INFO_FILE            := $(LOCAL_PATH)/board-info.txt
+QCOM_BOARD_PLATFORMS              := msm8960
+TARGET_BOARD_PLATFORM             := msm8960
+TARGET_BOOTLOADER_BOARD_NAME      := MSM8960
 
 TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
@@ -38,6 +41,145 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE  := 8388608
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 402653184
 BOARD_FLASH_BLOCK_SIZE             := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
+# blobs
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
+BOARD_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
+
+# Architecture
+TARGET_ARCH_VARIANT_CPU    := cortex-a9
+TARGET_CPU_ABI             := armeabi-v7a
+TARGET_CPU_ABI2            := armeabi
+TARGET_CPU_SMP             := true
+TARGET_CPU_VARIANT         := krait
+TARGET_ARCH                := arm
+TARGET_ARCH_VARIANT        := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
+BOARD_USES_QCOM_HARDWARE   := true
+
+# Krait optimizations
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION  := true
+TARGET_USE_KRAIT_PLD_SET             := true
+TARGET_KRAIT_BIONIC_PLDOFFS          := 10
+TARGET_KRAIT_BIONIC_PLDTHRESH        := 10
+TARGET_KRAIT_BIONIC_BBTHRESH         := 64
+TARGET_KRAIT_BIONIC_PLDSIZE          := 64
+
+BOARD_KERNEL_BASE    := 0x80200000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_RAMDISK_OFFSET := 0x02000000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=aries lpj=67677 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lge.kcal=0|0|0|x
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+# Wifi
+BOARD_HAS_QCOM_WLAN := true
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+TARGET_USES_WCNSS_CTRL := true
+TARGET_WCNSS_MAC_PREFIX := e8bba8
+WIFI_DRIVER_FW_PATH_STA := "sta"
+WIFI_DRIVER_FW_PATH_AP  := "ap"
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# FM
+QCOM_FM_ENABLED := true
+TARGET_FM_LEGACY_PATCHLOADER := true
+BOARD_HAVE_QCOM_FM := true
+
+BOARD_EGL_CFG := $(LOCAL_PATH)/rootdir/etc/egl.cfg
+
+TARGET_USES_QCOM_BSP        := true
+
+# QCOM enhanced A/V
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
+# Light
+TARGET_PROVIDES_LIBLIGHT := true
+
+# Display
+TARGET_USES_ION             := true
+USE_OPENGL_RENDERER         := true
+TARGET_USES_C2D_COMPOSITION := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+# Audio
+BOARD_USES_ALSA_AUDIO                   := true
+TARGET_USES_QCOM_MM_AUDIO               := true
+TARGET_USES_QCOM_COMPRESSED_AUDIO       := true
+BOARD_USES_LEGACY_ALSA_AUDIO            := false
+QCOM_ANC_HEADSET_ENABLED                := true
+QCOM_PROXY_DEVICE_ENABLED               := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE      := true
+QCOM_FLUENCE_ENABLED                    := true
+QCOM_MULTI_VOICE_SESSION_ENABLED := true
+
+# GPS
+#The below will be needed if we ever want to build GPS HAL from source
+#TARGET_PROVIDES_GPS_LOC_API := true
+#BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+#TARGET_NO_RPC := true
+
+# CM Hardware
+BOARD_USES_CM_HARDWARE = true
+BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
+
+# Camera
+BOARD_GLOBAL_CFLAGS       += -DQCOM_BSP
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH                        := true
+BOARD_HAVE_BLUETOOTH_QCOM                   := true
+BLUETOOTH_HCI_USE_MCT                       := true
+
+# Webkit
+ENABLE_WEBGL            := true
+TARGET_FORCE_CPU_UPLOAD := true
+
+# Recovery
+RECOVERY_FSTAB_VERSION           := 2
+TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
+BOARD_HAS_NO_SELECT_BUTTON       := true
+
+TARGET_USERIMAGES_USE_EXT4         := true
+
+BOARD_USES_SECURE_SERVICES := true
+
+USE_DEVICE_SPECIFIC_CAMERA:= true
+USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
+
+HAVE_ADRENO_SOURCE:= false
+
+SUPERUSER_EMBEDDED:= true
+
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer \
+    tcmiface
+
+# DEXPREOPT
+DONT_DEXPREOPT_PREBUILTS := true
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+BOARD_USES_LEGACY_MMAP := true
+
+MALLOC_SVELTE := true
+
+# SELinux policies
+# qcom sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += \
+    $(LOCAL_PATH)/sepolicy
+
 # Audio
 BOARD_HAVE_AUDIENCE_ES310               := true
 
@@ -47,10 +189,13 @@ BOARD_HAVE_CSD_FAST_CALL_SWITCH := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE := false
 
-TARGET_RECOVERY_FSTAB            := $(LOCAL_PATH)/rootdir/ramdisk/fstab.aries
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/ramdisk/fstab.aries
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
--include vendor/xiaomi/aries/BoardConfigVendor.mk
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm8960
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_msm8960.cpp
 
+-include vendor/xiaomi/aries/BoardConfigVendor.mk
