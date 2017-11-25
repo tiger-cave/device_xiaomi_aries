@@ -121,6 +121,10 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE      := true
 QCOM_FLUENCE_ENABLED                    := true
 QCOM_MULTI_VOICE_SESSION_ENABLED := true
 
+# Radio
+TARGET_RIL_VARIANT := caf
+BOARD_RIL_NO_CELLINFOLIST := true
+
 # GPS
 #The below will be needed if we ever want to build GPS HAL from source
 #TARGET_PROVIDES_GPS_LOC_API := true
