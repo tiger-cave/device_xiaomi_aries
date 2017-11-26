@@ -77,7 +77,10 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/rootdir/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/rootdir/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/rootdir/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/rootdir/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -304,6 +307,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
+    libqcomvoiceprocessing \
     tinymix
 
 # Camera
