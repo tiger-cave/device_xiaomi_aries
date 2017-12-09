@@ -30,4 +30,9 @@
     <bool name="config_recents_use_hardware_layers">true</bool>
 
     <bool name="config_show_battery_charging_anim">true</bool>
+
+    <!-- If true, enable the advance anti-falsing classifier on the lockscreen. On some devices it
+         does not work well, particularly with noisy touchscreens. Note that disabling it may
+         increase the rate of unintentional unlocks. -->
+    <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
 </resources>
