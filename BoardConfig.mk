@@ -183,6 +183,7 @@ TARGET_REMOVE_SECDISCARD_COMMAND := true
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2016-01-01
@@ -206,4 +207,3 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 -include vendor/xiaomi/aries/BoardConfigVendor.mk
-
