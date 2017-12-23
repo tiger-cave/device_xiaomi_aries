@@ -33,6 +33,7 @@ lib/libmmcamera_wavelet_lib.so
 lib/libmmjpeg.so
 lib/libmmstillomx.so
 lib/liboemcamera.so
+lib/libstlport.so|f881a16e0dcf95c49b15368f7c7a5f8ad7ed9f81
 
 # Camera chromatix
 lib/libchromatix_imx175_zsl.so

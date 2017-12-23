@@ -80,8 +80,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8960 \
-    libmmcamera_interface2 \
-    libstlport
+    libmmcamera_interface2
 
 # Display
 PRODUCT_PACKAGES += \
