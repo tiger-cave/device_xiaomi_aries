@@ -86,6 +86,16 @@ USE_DEVICE_SPECIFIC_CAMERA                  := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY        := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
 
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+    endif
+  endif
+endif
+
 # MK Hardware
 BOARD_HARDWARE_CLASS            += $(DEVICE_PATH)/mkhw
 
