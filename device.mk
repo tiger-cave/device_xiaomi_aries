@@ -113,7 +113,8 @@ PRODUCT_PACKAGES += \
 
 # Drm
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -267,6 +268,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
+# DRM
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
