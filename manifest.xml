@@ -26,4 +26,13 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>vendor.mokee.power</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMokeePower</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
