@@ -121,7 +121,7 @@ QCOM_FM_ENABLED                 := true
 TARGET_FM_LEGACY_PATCHLOADER    := true
 
 # Fonts
-EXTENDED_FONT_FOOTPRINT      := true
+EXCLUDE_SERIF_FONTS          := true
 USE_REDUCED_CJK_FONT_WEIGHTS := true
 
 # GPS
