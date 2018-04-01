@@ -285,6 +285,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.mdpcomp.logs=0 \
     ro.sf.lcd_density=320
 
+# Power package
+PRODUCT_PACKAGES += \
+    power.qcom
+
 # Power Profile
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.aries.power_profile=middle
