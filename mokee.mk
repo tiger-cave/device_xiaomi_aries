@@ -41,5 +41,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="aries" \
     PRODUCT_NAME="aries" \
-    BUILD_FINGERPRINT="Xiaomi/aries/aries:6.0.1/MMB29M/6.3.22:userdebug/test-keys" \
     PRIVATE_BUILD_DESC="aries-userdebug 6.0.1 MMB29M 6.3.22 test-keys"
+
+BUILD_FINGERPRINT := Xiaomi/aries/aries:6.0.1/MMB29M/6.3.22:userdebug/test-keys
