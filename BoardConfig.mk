@@ -87,7 +87,7 @@ USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY        := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
 
 # MK Hardware
-BOARD_HARDWARE_CLASS            := $(DEVICE_PATH)/mkhw
+BOARD_HARDWARE_CLASS            += $(DEVICE_PATH)/mkhw
 
 # Display
 BOARD_USES_LEGACY_MMAP          := true
@@ -109,11 +109,12 @@ BOARD_HAVE_QCOM_FM              := true
 QCOM_FM_ENABLED                 := true
 TARGET_FM_LEGACY_PATCHLOADER    := true
 
+# Fonts
+EXTENDED_FONT_FOOTPRINT      := true
+USE_REDUCED_CJK_FONT_WEIGHTS := true
+
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8960
