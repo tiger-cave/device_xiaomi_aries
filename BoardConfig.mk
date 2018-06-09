@@ -184,6 +184,9 @@ TARGET_REMOVE_SECDISCARD_COMMAND := true
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2016-01-01
+
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
