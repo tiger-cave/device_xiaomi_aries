@@ -278,7 +278,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     XiaomiParts
 
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-
 # call the proprietary setup
 $(call inherit-product, vendor/xiaomi/aries/aries-vendor.mk)
