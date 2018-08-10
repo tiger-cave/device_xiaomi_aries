@@ -8,6 +8,14 @@ persist.audio.fluence.speaker=true
 qcom.hw.aac.encoder=true
 ro.qc.sdk.audio.fluencetype=none
 
+# Dalvik heap
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=192m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+
 # RIL
 telephony.lteOnCdmaDevice=0
 ril.subscription.types=RUIM
