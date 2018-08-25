@@ -235,7 +235,7 @@ case $STACK in
     ;;
     *)
        logi "** Bluedroid stack **"
-       setprop bluetooth.status off
+       setprop vendor.bluetooth.status off
     ;;
 esac
 
@@ -275,7 +275,7 @@ case $exit_code_hci_qcomm_init in
          ;;
          *)
             logi "** Bluedroid stack **"
-            setprop bluetooth.status off
+            setprop vendor.bluetooth.status off
         ;;
      esac
 
@@ -294,7 +294,7 @@ case $TRANSPORT in
            ;;
            *)
               logi "** Bluedroid stack **"
-              setprop bluetooth.status on
+              setprop vendor.bluetooth.status on
            ;;
        esac
      ;;
@@ -307,7 +307,7 @@ case $TRANSPORT in
             ;;
             *)
                logi "** Bluedroid stack **"
-               setprop bluetooth.status on
+               setprop vendor.bluetooth.status on
             ;;
         esac
 
