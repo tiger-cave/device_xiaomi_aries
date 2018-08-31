@@ -85,6 +85,10 @@ BOARD_GLOBAL_CFLAGS                         += -DQCOM_BSP
 USE_DEVICE_SPECIFIC_CAMERA                  := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY        := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /system/bin/cameraserver=22 \
+    /system/bin/mediaserver=22 \
+    /system/vendor/bin/mm-qcamera-daemon=22
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
