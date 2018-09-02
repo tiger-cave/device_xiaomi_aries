@@ -101,7 +101,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # MK Hardware
-BOARD_HARDWARE_CLASS            += $(DEVICE_PATH)/mkhw
+JAVA_SOURCE_OVERLAYS := org.mokee.hardware|$(DEVICE_PATH)/mkhw|**/*.java
 
 # Display
 BOARD_USES_LEGACY_MMAP          := true
