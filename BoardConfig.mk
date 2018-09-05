@@ -193,8 +193,7 @@ BOARD_HAS_NO_SELECT_BUTTON       := true
 TARGET_REMOVE_SECDISCARD_COMMAND := true
 
 # Sepolicy
-include device/qcom/sepolicy/sepolicy.mk
-include device/qcom/sepolicy/legacy-sepolicy.mk
+include device/qcom/sepolicy-legacy/sepolicy.mk
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2016-01-01
