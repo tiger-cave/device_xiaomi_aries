@@ -123,6 +123,12 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 BOARD_USES_QCOM_HARDWARE   := true
 TARGET_USES_QCOM_BSP       := true
 
+# Recovery
+TARGET_RECOVERY_FSTAB            := $(DEVICE_PATH)/rootdir/ramdisk/fstab.qcom
+RECOVERY_FSTAB_VERSION           := 2
+TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
+BOARD_HAS_NO_SELECT_BUTTON       := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
@@ -135,8 +141,6 @@ WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
-
-TARGET_RECOVERY_FSTAB            := $(DEVICE_PATH)/rootdir/ramdisk/fstab.qcom
 
 -include vendor/xiaomi/aries/BoardConfigVendor.mk
 
