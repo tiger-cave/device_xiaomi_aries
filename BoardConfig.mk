@@ -16,7 +16,7 @@
 # inherit from qcom-common
 -include device/xiaomi/msm8960-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/xiaomi/aries
+DEVICE_PATH := device/xiaomi/aries
 
 TARGET_BOOTLOADER_NAME       := aries
 
@@ -47,6 +47,12 @@ QCOM_USBAUDIO_ENABLED                   := true
 TUNNEL_MODE_SUPPORTS_AMRWB              := true
 USE_TUNNEL_MODE                         := true
 
+# Bluetooth
+BLUETOOTH_HCI_USE_MCT                       := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH                        := true
+BOARD_HAVE_BLUETOOTH_QCOM                   := true
+
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8960
 TARGET_KERNEL_CONFIG := aries-perf-user_defconfig
@@ -64,10 +70,9 @@ BOARD_FLASH_BLOCK_SIZE             := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE := false
 
-TARGET_RECOVERY_FSTAB            := $(LOCAL_PATH)/rootdir/ramdisk/fstab.qcom
+TARGET_RECOVERY_FSTAB            := $(DEVICE_PATH)/rootdir/ramdisk/fstab.qcom
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+
 
 -include vendor/xiaomi/aries/BoardConfigVendor.mk
 
