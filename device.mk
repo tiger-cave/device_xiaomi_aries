@@ -68,6 +68,19 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     tinymix
 
+# Display
+PRODUCT_PACKAGES += \
+    libgenlock \
+    libmemalloc \
+    liboverlay \
+    libqdutils \
+    libtilerenderer \
+    hwcomposer.msm8960 \
+    gralloc.msm8960 \
+    copybit.msm8960 \
+    memtrack.msm8960 \
+    libemoji
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck
