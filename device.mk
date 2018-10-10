@@ -59,6 +59,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/voiceproc_init.img:system/etc/firmware/voiceproc_init.img \
     $(LOCAL_PATH)/voiceproc.img:system/etc/firmware/voiceproc.img
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    e2fsck
+
 # GPS configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
