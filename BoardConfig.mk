@@ -38,6 +38,11 @@ TARGET_BOOTLOADER_NAME       := aries
 TARGET_NO_BOOTLOADER         := true
 TARGET_NO_RADIOIMAGE         := true
 
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
+
 # Krait optimizations
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION  := true
 TARGET_USE_KRAIT_PLD_SET             := true
