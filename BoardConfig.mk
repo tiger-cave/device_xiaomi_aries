@@ -19,9 +19,6 @@
 LOCAL_PATH := device/xiaomi/aries
 
 TARGET_BOOTLOADER_NAME       := aries
-TARGET_BOARD_INFO_FILE       := $(LOCAL_PATH)/board-info.txt
-
-TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 TARGET_OTA_ASSERT_DEVICE := aries
 
