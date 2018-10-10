@@ -60,6 +60,7 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE      := true
 AUDIO_FEATURE_ENABLED_AUXPCM_BT         := false
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP     := true
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS      := true
+AUDIO_FEATURE_ENABLED_FM                := true
 BOARD_USES_ALSA_AUDIO                   := true
 BOARD_HAVE_AUDIENCE_ES310               := true
 BOARD_HAVE_CSD_FAST_CALL_SWITCH         := true
@@ -94,6 +95,11 @@ OVERRIDE_RS_DRIVER              := libRSDriver_adreno.so
 USE_OPENGL_RENDERER             := true
 TARGET_USES_C2D_COMPOSITION     := true
 TARGET_USES_ION                 := true
+
+# FM
+COMMON_GLOBAL_CFLAGS            += -DQCOM_FM_ENABLED
+BOARD_HAVE_QCOM_FM              := true
+QCOM_FM_ENABLED                 := true
 
 # Kernel
 BOARD_KERNEL_BASE                    := 0x80200000
