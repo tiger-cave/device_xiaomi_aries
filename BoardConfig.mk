@@ -102,6 +102,9 @@ QCOM_FM_ENABLED                 := true
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Kernel
 BOARD_KERNEL_BASE                    := 0x80200000
 BOARD_KERNEL_PAGESIZE                := 2048
