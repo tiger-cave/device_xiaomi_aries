@@ -18,9 +18,37 @@
 
 DEVICE_PATH := device/xiaomi/aries
 
-TARGET_BOOTLOADER_NAME       := aries
+# Architecture
+TARGET_ARCH_VARIANT_CPU    := cortex-a9
+TARGET_CPU_ABI             := armeabi-v7a
+TARGET_CPU_ABI2            := armeabi
+TARGET_CPU_SMP             := true
+TARGET_CPU_VARIANT         := krait
+TARGET_ARCH                := arm
+TARGET_ARCH_VARIANT        := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
+BOARD_USES_QCOM_HARDWARE   := true
 
+# Assert
 TARGET_OTA_ASSERT_DEVICE := aries
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := MSM8960
+TARGET_BOOTLOADER_NAME       := aries
+TARGET_NO_BOOTLOADER         := true
+TARGET_NO_RADIOIMAGE         := true
+
+# Krait optimizations
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION  := true
+TARGET_USE_KRAIT_PLD_SET             := true
+TARGET_KRAIT_BIONIC_PLDOFFS          := 10
+TARGET_KRAIT_BIONIC_PLDTHRESH        := 10
+TARGET_KRAIT_BIONIC_BBTHRESH         := 64
+TARGET_KRAIT_BIONIC_PLDSIZE          := 64
+
+# Platform
+QCOM_BOARD_PLATFORMS                    := msm8960
+TARGET_BOARD_PLATFORM                   := msm8960
 
 # Audio
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE      := true
