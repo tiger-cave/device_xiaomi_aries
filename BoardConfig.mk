@@ -86,6 +86,15 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 
+# Display
+BOARD_USES_LEGACY_MMAP          := true
+HAVE_ADRENO_SOURCE              := false
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER              := libRSDriver_adreno.so
+USE_OPENGL_RENDERER             := true
+TARGET_USES_C2D_COMPOSITION     := true
+TARGET_USES_ION                 := true
+
 # QCOM enhanced A/V
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
@@ -115,13 +124,7 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE  := 8388608
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 402653184
 BOARD_FLASH_BLOCK_SIZE             := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
-
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-HAVE_ADRENO_SOURCE := false
-
 TARGET_RECOVERY_FSTAB            := $(DEVICE_PATH)/rootdir/ramdisk/fstab.qcom
-
-
 
 -include vendor/xiaomi/aries/BoardConfigVendor.mk
 
