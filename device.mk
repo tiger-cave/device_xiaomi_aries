@@ -59,6 +59,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/voiceproc_init.img:system/etc/firmware/voiceproc_init.img \
     $(LOCAL_PATH)/voiceproc.img:system/etc/firmware/voiceproc.img
 
+PRODUCT_PACKAGES += \
+    audio_policy.msm8960 \
+    audio.primary.msm8960 \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    libaudio-resampler \
+    tinymix
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck
