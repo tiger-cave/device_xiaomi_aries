@@ -95,6 +95,17 @@ USE_OPENGL_RENDERER             := true
 TARGET_USES_C2D_COMPOSITION     := true
 TARGET_USES_ION                 := true
 
+# Kernel
+BOARD_KERNEL_BASE                    := 0x80200000
+BOARD_KERNEL_PAGESIZE                := 2048
+BOARD_RAMDISK_OFFSET                 := 0x02000000
+BOARD_MKBOOTIMG_ARGS                 := --ramdisk_offset 0x02000000
+BOARD_KERNEL_CMDLINE                 := console=null androidboot.hardware=qcom ehci-hcd.park=3 maxcpus=2 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
+TARGET_KERNEL_ARCH                   := arm
+TARGET_KERNEL_SOURCE                 := kernel/xiaomi/aries
+TARGET_KERNEL_CONFIG                 := aries-perf-user_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX   := arm-linux-androideabi-
+
 # QCOM enhanced A/V
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
@@ -110,11 +121,6 @@ WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
-
-TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8960
-TARGET_KERNEL_CONFIG := aries-perf-user_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x01E00000 # 44M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00F00000 # 22M
