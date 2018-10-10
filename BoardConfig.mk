@@ -54,30 +54,18 @@ QCOM_BOARD_PLATFORMS                    := msm8960
 TARGET_BOARD_PLATFORM                   := msm8960
 
 # Audio
+USE_CUSTOM_AUDIO_POLICY := 1
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE      := true
-AUDIO_FEATURE_ENABLED_AUXPCM_BT         := false
-AUDIO_FEATURE_ENABLED_COMPRESS_VOIP     := true
-AUDIO_FEATURE_ENABLED_EXTN_FORMATS      := true
-AUDIO_FEATURE_ENABLED_FM                := true
 BOARD_USES_ALSA_AUDIO                   := true
-BOARD_HAVE_AUDIENCE_ES310               := true
 BOARD_HAVE_CSD_FAST_CALL_SWITCH         := true
+BOARD_USES_LEGACY_ALSA_AUDIO            := false
 BOARD_HAVE_NEW_QCOM_CSDCLIENT           := true
-BOARD_USES_LEGACY_ALSA_AUDIO            := true
-TARGET_USES_QCOM_MM_AUDIO               := true
-TARGET_USES_QCOM_COMPRESSED_AUDIO       := true
-QCOM_ACDB_ENABLED                       := true
 QCOM_ANC_HEADSET_ENABLED                := true
-QCOM_AUDIO_FORMAT_ENABLED               := true
-QCOM_CSDCLIENT_ENABLED                  := true
 QCOM_FLUENCE_ENABLED                    := true
 QCOM_MULTI_VOICE_SESSION_ENABLED        := true
-QCOM_OUTPUT_FLAGS_ENABLED               := true
 QCOM_PROXY_DEVICE_ENABLED               := true
-QCOM_TUNNEL_LPA_ENABLED                 := true
-QCOM_USBAUDIO_ENABLED                   := true
-TUNNEL_MODE_SUPPORTS_AMRWB              := true
-USE_TUNNEL_MODE                         := true
+TARGET_USES_QCOM_MM_AUDIO               := true
+TARGET_USES_QCOM_COMPRESSED_AUDIO       := true
 
 # Bluetooth
 BLUETOOTH_HCI_USE_MCT                       := true
