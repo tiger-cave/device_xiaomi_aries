@@ -160,19 +160,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     wcnss_service
 
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ramdisk/init.target.rc:root/init.target.rc \
     $(LOCAL_PATH)/rootdir/ramdisk/fstab.qcom:root/fstab.qcom
-
-# Audio Configuration
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.vns.mode=2
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cdma.home.operator.numeric=46003 \
-    ro.telephony.default_cdma_sub=0 \
-    persist.omh.enabled=true
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
