@@ -151,6 +151,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
+PRODUCT_PACKAGES += \
+    hostapd \
+    dhcpcd.conf \
+    libwifi-hal \
+    libwpa_client \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    wcnss_service
+
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ramdisk/init.target.rc:root/init.target.rc \
     $(LOCAL_PATH)/rootdir/ramdisk/fstab.qcom:root/fstab.qcom
