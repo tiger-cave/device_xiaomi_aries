@@ -28,6 +28,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/voiceproc_init.img:system/etc/firmware/voiceproc_init.img \
     $(LOCAL_PATH)/voiceproc.img:system/etc/firmware/voiceproc.img
 
+# GPS configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
+
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
