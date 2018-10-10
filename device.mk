@@ -21,15 +21,16 @@
 
 LOCAL_PATH := device/xiaomi/aries
 
+# Audio
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
+    $(LOCAL_PATH)/voiceproc_init.img:system/etc/firmware/voiceproc_init.img \
+    $(LOCAL_PATH)/voiceproc.img:system/etc/firmware/voiceproc.img
+
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-
-# Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/audio/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
-    $(LOCAL_PATH)/voiceproc_init.img:system/etc/firmware/voiceproc_init.img \
-    $(LOCAL_PATH)/voiceproc.img:system/etc/firmware/voiceproc.img
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ramdisk/init.target.rc:root/init.target.rc \
