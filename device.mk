@@ -68,6 +68,12 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     tinymix
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8960 \
+    libmmcamera_interface2 \
+    libstlport
+
 # Display
 PRODUCT_PACKAGES += \
     libgenlock \

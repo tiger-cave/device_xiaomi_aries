@@ -85,6 +85,13 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 
+# Camera
+COMMON_GLOBAL_CFLAGS                        += -DQCOM_BSP
+USE_DEVICE_SPECIFIC_CAMERA                  := true
+USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY        := true
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
+
+
 # Display
 BOARD_USES_LEGACY_MMAP          := true
 HAVE_ADRENO_SOURCE              := false
