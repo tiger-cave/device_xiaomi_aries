@@ -153,6 +153,10 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefrighthw
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8960
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
