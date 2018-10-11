@@ -111,6 +111,9 @@ TARGET_KERNEL_SOURCE                 := kernel/xiaomi/aries
 TARGET_KERNEL_CONFIG                 := aries-perf-user_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX   := arm-linux-androideabi-
 
+# Malloc
+MALLOC_IMPL := dlmalloc
+
 # Partitions
 TARGET_USERIMAGES_USE_EXT4         := true
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x01E00000 # 44M
