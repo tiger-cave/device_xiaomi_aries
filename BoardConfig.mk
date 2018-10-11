@@ -137,6 +137,10 @@ RECOVERY_FSTAB_VERSION           := 2
 TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON       := true
 
+# Radio
+TARGET_RIL_VARIANT := caf
+BOARD_RIL_NO_CELLINFOLIST := true
+
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
