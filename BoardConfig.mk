@@ -137,6 +137,9 @@ RECOVERY_FSTAB_VERSION           := 2
 TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON       := true
 
+# Sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
