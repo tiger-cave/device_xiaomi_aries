@@ -79,7 +79,6 @@ USE_DEVICE_SPECIFIC_CAMERA                  := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY        := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
 
-
 # Display
 BOARD_USES_LEGACY_MMAP          := true
 HAVE_ADRENO_SOURCE              := false
@@ -96,6 +95,10 @@ QCOM_FM_ENABLED                 := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm8960
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_msm8960.cpp
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
