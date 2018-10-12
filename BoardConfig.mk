@@ -39,7 +39,7 @@ TARGET_NO_RADIOIMAGE         := true
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
-COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
+BOARD_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
 # Krait optimizations
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION  := true
@@ -74,7 +74,7 @@ BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 
 # Camera
-COMMON_GLOBAL_CFLAGS                        += -DQCOM_BSP
+BOARD_GLOBAL_CFLAGS                         += -DQCOM_BSP
 USE_DEVICE_SPECIFIC_CAMERA                  := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY        := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
