@@ -325,8 +325,8 @@ status_t QCameraStream_record::processRecordFrame(void *data)
 
     if(mHalCamCtrl->mVideoStabilization)
       mHalCamCtrl->LINK_morpho_MovieSolid_Function(
-        (void*)frame->video.video.frame->buffer + frame->video.video.frame->y_off,
-        (void*)frame->video.video.frame->buffer + frame->video.video.frame->cbcr_off
+        (void*)(frame->video.video.frame->buffer + frame->video.video.frame->y_off),
+        (void*)(frame->video.video.frame->buffer + frame->video.video.frame->cbcr_off)
       );
 
     Mutex::Autolock lock(mStopCallbackLock);
