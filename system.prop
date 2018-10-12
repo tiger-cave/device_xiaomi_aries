@@ -72,3 +72,6 @@ persist.gps.qmienabled=true
 media.stagefright.use-awesome=true
 
 camera2.portability.force_api=1
+
+# sdcardfs
+ro.sys.sdcardfs=true
