@@ -119,7 +119,7 @@ TARGET_KERNEL_CONFIG                 := aries-perf-user_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX   := arm-linux-androideabi-
 
 # Malloc
-MALLOC_IMPL := dlmalloc
+MALLOC_SVELTE := true
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4         := true
