@@ -68,6 +68,9 @@ on post-fs-data
    mkdir /tombstones/mdm 0771 system system
    mkdir /tombstones/mdm2 0771 system system
 
+on property:dev.bootcomplete=1
+    setprop sys.io.scheduler "bfq"
+
 on property:persist.sys.display_prefer=0
     write /sys/devices/virtual/graphics/fb0/msm_fb_dispparam 2
 
