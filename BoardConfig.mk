@@ -94,9 +94,9 @@ TARGET_USES_C2D_COMPOSITION     := true
 TARGET_USES_ION                 := true
 
 # FM
-COMMON_GLOBAL_CFLAGS            += -DQCOM_FM_ENABLED
 BOARD_HAVE_QCOM_FM              := true
 QCOM_FM_ENABLED                 := true
+TARGET_FM_LEGACY_PATCHLOADER    := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
