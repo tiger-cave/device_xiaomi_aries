@@ -24,7 +24,7 @@ LOCAL_PATH := device/xiaomi/aries
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-mokee
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi

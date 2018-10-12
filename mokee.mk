@@ -25,10 +25,10 @@ $(call inherit-product, device/qcom/common/Android.mk)
 # Inherit from cancro device
 $(call inherit-product, device/xiaomi/aries/device.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+# Inherit some common Mokee stuff.
+$(call inherit-product, vendor/mk/config/common_mini_phone.mk)
 
-PRODUCT_NAME := lineage_aries
+PRODUCT_NAME := mk_aries
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_DEVICE := aries
 PRODUCT_BRAND := Xiaomi

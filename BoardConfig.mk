@@ -79,9 +79,8 @@ USE_DEVICE_SPECIFIC_CAMERA                  := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY        := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
 
-# CM Hardware
-BOARD_USES_CM_HARDWARE          := true
-BOARD_HARDWARE_CLASS            := $(DEVICE_PATH)/cmhw
+# MK Hardware
+BOARD_HARDWARE_CLASS            := $(DEVICE_PATH)/mkhw
 
 
 # Display
