@@ -169,7 +169,7 @@ lib/libdsutils.so
 lib/libidl.so
 lib/libnetmgr.so
 lib/libqcci_adc.so
-lib/libqcci_legacy.so
+lib/libqcci_legacy.so|3bf9e614fe169645dd2e0a1661f3e7638bb58904
 lib/libqdi.so
 lib/libqdp.so
 lib/libqmi.so
@@ -181,7 +181,7 @@ lib/libril-qcril-hook-oem.so
 lib/libxml.so
 
 # Sensors
-bin/sensors.qcom
+bin/sensors.qcom|6e88e1c118cd7a06fc7b60aa523f30e216566d6a
 lib/hw/sensors.msm8960.so
 lib/libAKM.so
 lib/libsensor1.so
