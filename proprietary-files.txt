@@ -146,6 +146,8 @@ bin/radish
 bin/rmt_storage
 -lib/libqminvapi.so
 vendor/lib/libdiag.so
+vendor/lib/libmm-abl.so
+vendor/lib/libmm-abl-oem.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
