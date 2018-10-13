@@ -77,3 +77,6 @@ camera2.portability.force_api=1
 
 # sdcardfs
 ro.sys.sdcardfs=true
+
+# Maintainer
+ro.mk.maintainer=guaiyihu
