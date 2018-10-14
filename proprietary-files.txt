@@ -183,7 +183,7 @@ lib/libxml.so
 
 # Sensors
 bin/sensors.qcom|6e88e1c118cd7a06fc7b60aa523f30e216566d6a
-lib/hw/sensors.msm8960.so
+lib/hw/sensors.msm8960.so:vendor/lib/sensors.aries.so
 lib/libAKM.so
 lib/libsensor1.so
 lib/libsensor_reg.so
