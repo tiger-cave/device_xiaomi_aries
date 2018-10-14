@@ -37,8 +37,8 @@ TARGET_NO_BOOTLOADER         := true
 TARGET_NO_RADIOIMAGE         := true
 
 # Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
+BOARD_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
+BOARD_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
 BOARD_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
 # Krait optimizations
@@ -81,7 +81,6 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
 
 # MK Hardware
 BOARD_HARDWARE_CLASS            := $(DEVICE_PATH)/mkhw
-
 
 # Display
 BOARD_USES_LEGACY_MMAP          := true
