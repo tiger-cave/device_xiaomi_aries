@@ -101,11 +101,7 @@ vendor/lib/libsc-a3xx.so
 
 # GPS
 lib/hw/flp.msm8960.so
-lib/hw/gps.msm8960.so
 lib/libulp2.so
-lib/libloc_core.so
-lib/libloc_eng.so
-lib/libgps.utils.so
 vendor/lib/libalarmservice_jni.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
