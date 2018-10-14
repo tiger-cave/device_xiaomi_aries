@@ -274,6 +274,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # call the proprietary setup
