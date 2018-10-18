@@ -96,8 +96,8 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
-# MK Hardware
-BOARD_HARDWARE_CLASS            += $(DEVICE_PATH)/mkhw
+# Lineage Hardware
+BOARD_HARDWARE_CLASS            += $(DEVICE_PATH)/lineagehw
 
 # Display
 BOARD_USES_LEGACY_MMAP          := true
