@@ -36,8 +36,6 @@
 
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
 
 #define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
 
