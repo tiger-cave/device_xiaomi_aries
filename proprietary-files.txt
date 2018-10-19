@@ -144,7 +144,7 @@ vendor/lib/libqmi_encdec.so
 # Radio
 bin/irsc_util:vendor/bin/irsc_util
 bin/netmgrd:vendor/bin/netmgrd
-etc/modem/Diag.cfg
+etc/modem/Diag.cfg:vendor/etc/modem/Diag.cfg
 lib/libCommandSvc.so
 lib/libconfigdb.so
 lib/libdsi_netctrl.so
