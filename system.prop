@@ -16,7 +16,7 @@ ro.telephony.call_ring.multiple=0
 ro.cdma.home.operator.numeric=46003
 ro.telephony.default_cdma_sub=0
 persist.omh.enabled=true
-rild.libpath=/system/lib/libril-qc-qmi-1.so
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
 
 drm.service.enabled=true
