@@ -72,7 +72,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 # Bionic
 TARGET_LD_SHIM_LIBS := \
-    /system/bin/mpdecision|libshims_atomic.so
+    /vendor/bin/mpdecision|libshims_atomic.so
 
 # Bluetooth
 BLUETOOTH_HCI_USE_MCT                       := true

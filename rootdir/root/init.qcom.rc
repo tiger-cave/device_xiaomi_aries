@@ -506,12 +506,12 @@ service cnd /system/bin/cnd
     class late_start
     socket cnd stream 666 root radio
 
-service irsc_util /system/bin/irsc_util "/vendor/etc/sec_config"
+service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class main
     user root
     oneshot
 
-service rmt_storage /system/bin/rmt_storage
+service rmt_storage /vendor/bin/rmt_storage
     class main
     user root
     disabled
@@ -558,7 +558,7 @@ service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
     disabled
 
 # QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
+service qmuxd /vendor/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth gps oem_2950
@@ -569,12 +569,12 @@ service audiod /system/bin/audiod
     user system
     group audio
 
-service netmgrd /system/bin/netmgrd
+service netmgrd /vendor/bin/netmgrd
     class main
     group radio system wakelock
     disabled
 
-service sensors /system/bin/sensors.qcom
+service sensors /vendor/bin/sensors.qcom
     class late_start
     user root
 
@@ -715,13 +715,13 @@ service hdmid /system/bin/hdmid
     socket hdmid stream 0660 root system graphics
     disabled
 
-service ppd /system/bin/mm-pp-daemon
+service ppd /vendor/bin/mm-pp-daemon
     class late_start
     user system
     socket pps stream 0660 system system graphics
     group system graphics
 
-service time_daemon /system/bin/time_daemon
+service time_daemon /vendor/bin/time_daemon
    class late_start
    user root
    group root
@@ -746,28 +746,28 @@ on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 1
 
 #start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics bluetooth
 
-service thermald /system/bin/thermald
+service thermald /vendor/bin/thermald
    class main
    user root
    group root
    disabled
 
-service thermal-engine /system/bin/thermal-engine
+service thermal-engine /vendor/bin/thermal-engine
    class main
    user root
    group root
    disabled
 
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
+service mpdecision /vendor/bin/mpdecision --no_sleep --avg_comp
    user root
    disabled
 
-service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
+service kickstart /vendor/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
     oneshot
     disabled
 
@@ -776,7 +776,7 @@ service qrngd /system/bin/qrngd -f
    user root
    group root
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
