@@ -308,7 +308,7 @@ ld_img_error:
 	return rc;
 }
 
-#define UART_INIT_IMAGE "/system/etc/firmware/voiceproc_init.img"
+#define UART_INIT_IMAGE "/vendor/firmware/voiceproc_init.img"
 #define UART_DEV_NAME "/dev/ttyHS2"
 int uart_load_binary(int fd, char *firmware_path)
 {
@@ -437,7 +437,7 @@ int es310_init(amp_device_t *dev)
 	{
 			ALOGV("start loading the voiceproc.img file, retry:%d +", 20 - retry_count);
 			ALOGV("set codec reset command");
-			rc = uart_load_binary(mES310Fd, "/etc/firmware/voiceproc.img");
+			rc = uart_load_binary(mES310Fd, "/vendor/firmware/voiceproc.img");
 			if (rc != 0)
 			{
 					ALOGE("uart_load_binary fail, rc:%d", rc);

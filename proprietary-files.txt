@@ -8,8 +8,8 @@ lib/libcsd-client.so
 lib/libsurround_proc.so
 
 # Audio Firmware
-etc/firmware/voiceproc_init.img
-etc/firmware/voiceproc.img
+etc/firmware/voiceproc_init.img:vendor/firmware/voiceproc_init.img
+etc/firmware/voiceproc.img:vendor/firmware/voiceproc.img
 
 # Bluetooth
 bin/btnvtool:vendor/bin/btnvtool
@@ -190,10 +190,10 @@ lib/libTimeService.so
 vendor/lib/libtime_genoff.so
 
 # Video Firmware
-etc/firmware/vidc.b00
-etc/firmware/vidc.b01
-etc/firmware/vidc.b02
-etc/firmware/vidc.b03
-etc/firmware/vidc.mdt
-etc/firmware/vidc_1080p.fw
-etc/firmware/vidcfw.elf
+etc/firmware/vidc.b00:vendor/firmware/vidc.b00
+etc/firmware/vidc.b01:vendor/firmware/vidc.b01
+etc/firmware/vidc.b02:vendor/firmware/vidc.b02
+etc/firmware/vidc.b03:vendor/firmware/vidc.b03
+etc/firmware/vidc.mdt:vendor/firmware/vidc.mdt
+etc/firmware/vidc_1080p.fw:vendor/firmware/vidc_1080p.fw
+etc/firmware/vidcfw.elf:vendor/firmware/vidcfw.elf
