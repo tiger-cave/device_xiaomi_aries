@@ -29,4 +29,6 @@
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
      -->
     <integer name="config_longPressOnHomeBehavior">3</integer>
+
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>
 </resources>
