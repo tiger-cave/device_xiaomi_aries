@@ -119,7 +119,8 @@ ifeq ($(USE_DEVICE_SPECIFIC_CAMERA),true)
 
       LOCAL_CFLAGS += -include bionic/libc/include/sys/socket.h
 
-      LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+      LOCAL_PROPRIETARY_MODULE := true
+      LOCAL_MODULE_RELATIVE_PATH := hw
       LOCAL_MODULE:= camera.msm8960
       LOCAL_MODULE_TAGS := optional
       include $(BUILD_SHARED_LIBRARY)
