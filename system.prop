@@ -43,6 +43,7 @@ ro.qc.sensors.wl_dis=true
 # BT
 vendor.qcom.bluetooth.soc=smd
 ro.bluetooth.hfp.ver=1.6
+ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr
 ro.qualcomm.bt.hci_transport=smd
 ro.bluetooth.request.master=true
 ro.bluetooth.remote.autoconnect=true

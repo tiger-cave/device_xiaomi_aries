@@ -80,6 +80,7 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
+    bdaddr_xiaomi \
     libbt-vendor
 
 # Camera
