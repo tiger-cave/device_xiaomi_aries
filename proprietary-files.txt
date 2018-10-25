@@ -12,7 +12,6 @@ etc/firmware/voiceproc_init.img:vendor/firmware/voiceproc_init.img
 etc/firmware/voiceproc.img:vendor/firmware/voiceproc.img
 
 # Bluetooth
-bin/btnvtool:vendor/bin/btnvtool
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 vendor/lib/libbtnv.so
 
