@@ -486,6 +486,7 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
 service rmt_storage /vendor/bin/rmt_storage
     class main
     user root
+    group system wakelock
     disabled
 
 on property:ro.boot.emmc=true
@@ -521,7 +522,6 @@ service qmuxd /vendor/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth gps oem_2950
-    disabled
 
 service netmgrd /vendor/bin/netmgrd
     class main
@@ -629,18 +629,14 @@ service mpdecision /vendor/bin/mpdecision --no_sleep --avg_comp
    disabled
 
 service kickstart /vendor/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
+    class core
+    group system radio wakelock
     oneshot
-    disabled
 
 service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
-
-# Start kickstart if mdm is detected
-on property:ro.baseband=mdm
-    mkdir /data/qcks 0770 system system
-    start kickstart
 
 #Disable boot timeout for external modems.
 on property:persist.sys.mdm.timeout_disable=1
