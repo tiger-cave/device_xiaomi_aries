@@ -329,9 +329,6 @@ on post-fs-data
     # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
 
-    # Create directories for gpsone_daemon services
-    mkdir /data/misc/gpsone_d 0770 system gps
-
     # Create directories for QuIPS
     mkdir /data/misc/quipc 0770 gps system
 
@@ -457,20 +454,9 @@ on property:sys.boot_completed=1
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
-    stop hdmid
-
-on property:init.svc.wpa_supplicant=stopped
-    stop dhcpcd
 
 on property:bluetooth.isEnabled=true
-    start btwlancoex
     write /sys/class/bluetooth/hci0/idle_timeout 7000
-
-on property:bluetooth.sap.status=running
-    start bt-sap
-
-on property:bluetooth.sap.status=stopped
-    stop bt-sap
 
 on property:bluetooth.dun.status=running
     start bt-dun
@@ -491,10 +477,6 @@ service qcom-c_main-sh /system/bin/sh /init.class_main.sh
 on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
     start config_bluetooth
-
-service cnd /system/bin/cnd
-    class late_start
-    socket cnd stream 666 root radio
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class main
@@ -534,30 +516,12 @@ service bt-dun /system/bin/sh /system/etc/init.qcom.btdun.sh
     disabled
     oneshot
 
-service bt-sap /system/bin/sapd 15
-    user bluetooth
-    group bluetooth
-    class late_start
-    disabled
-    oneshot
-
-service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
-    class late_start
-    user system
-    group system inet
-    disabled
-
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /vendor/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth gps oem_2950
     disabled
-
-service audiod /system/bin/audiod
-    class main
-    user system
-    group audio
 
 service netmgrd /vendor/bin/netmgrd
     class main
@@ -593,72 +557,6 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -ABKLG
-    class late_start
-    disabled
-    oneshot
-
-service dhcpcd_p2p /system/bin/dhcpcd -ABKLG
-    class late_start
-    disabled
-    oneshot
-
-service iprenew_wlan0 /system/bin/dhcpcd -n
-    class late_start
-    disabled
-    oneshot
-
-service iprenew_p2p /system/bin/dhcpcd -n
-    class late_start
-    disabled
-    oneshot
-
-service dhcpcd_eth0 /system/bin/dhcpcd -aABDKL
-    class late_start
-    disabled
-    oneshot
-
-service iprenew_eth0 /system/bin/dhcpcd -n
-    class late_start
-    disabled
-    oneshot
-
-service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
-    class late_start
-    disabled
-    oneshot
-
-service iprenew_bt-pan /system/bin/dhcpcd -n
-    class late_start
-    disabled
-    oneshot
-
-service dhcpcd_bnep0 /system/bin/dhcpcd -BKLG
-    disabled
-    oneshot
-
-service dhcpcd_bnep1 /system/bin/dhcpcd -BKLG
-    disabled
-    oneshot
-
-service dhcpcd_bnep2 /system/bin/dhcpcd -BKLG
-    disabled
-    oneshot
-
-service dhcpcd_bnep3 /system/bin/dhcpcd -BKLG
-    disabled
-    oneshot
-
-service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
-    disabled
-    oneshot
-
-service gpsone_daemon /system/bin/gpsone_daemon
-    class late_start
-    user gps
-    group gps inet net_raw
-    disabled
-
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
     user root
@@ -674,18 +572,6 @@ on property:crypto.driver.load=0
      exec /system/bin/rmmod qcedev.ko
      exec /system/bin/rmmod qce.ko
 
-service drmdiag /system/bin/drmdiagapp
-    class late_start
-     user root
-     disabled
-     oneshot
-
-on property:drmdiag.load=1
-    start drmdiag
-
-on property:drmdiag.load=0
-    stop drmdiag
-
 service qcom-sh /system/bin/sh /init.qcom.sh
     class late_start
     user root
@@ -700,11 +586,6 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
 
-service hdmid /system/bin/hdmid
-    class late_start
-    socket hdmid stream 0660 root system graphics
-    disabled
-
 service ppd /vendor/bin/mm-pp-daemon
     class late_start
     user system
@@ -715,16 +596,6 @@ service time_daemon /vendor/bin/time_daemon
    class late_start
    user root
    group root
-
-
-service sysmatsir /system/bin/smonsir
-    user root
-    group root
-    oneshot
-    disabled
-
-on property:persist.sysmatsir.enable=1
-    start sysmatsir
 
 service charger /sbin/chargeonlymode
     class charger
@@ -761,11 +632,6 @@ service kickstart /vendor/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
     oneshot
     disabled
 
-service qrngd /system/bin/qrngd -f
-   class main
-   user root
-   group root
-
 service qseecomd /vendor/bin/qseecomd
     class core
     user root
@@ -776,10 +642,6 @@ on property:ro.baseband=mdm
     mkdir /data/qcks 0770 system system
     start kickstart
 
-service dpmd /system/bin/dpmd
-    class late_start
-    socket dpmd stream 660 root system
-
 #Disable boot timeout for external modems.
 on property:persist.sys.mdm.timeout_disable=1
     write /sys/module/mdm_common/parameters/disable_boot_timeout 1
@@ -789,11 +651,6 @@ on property:persist.sys.ssr.restart_level=1
     write /sys/module/subsystem_restart/parameters/restart_level 1
 on property:persist.sys.ssr.restart_level=3
     write /sys/module/subsystem_restart/parameters/restart_level 3
-
-service battery_monitor /system/bin/battery_monitor
-    user system
-    group system
-    disabled
 
 service wcnss-service /vendor/bin/wcnss_service
     class main
