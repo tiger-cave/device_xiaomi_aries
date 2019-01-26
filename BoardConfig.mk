@@ -186,6 +186,7 @@ TARGET_USES_QCOM_BSP       := true
 # Radio
 TARGET_RIL_VARIANT := caf
 BOARD_RIL_NO_CELLINFOLIST := true
+TARGET_USES_OLD_MNC_FORMAT := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB            := $(DEVICE_PATH)/rootdir/root/fstab.qcom
