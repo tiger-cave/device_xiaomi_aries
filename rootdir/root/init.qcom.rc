@@ -701,6 +701,7 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
     oneshot
 
 on property:sys.boot_completed=1
+    setprop vendor.post_boot.parsed 1
     start qcom-post-boot
 
 service hdmid /system/bin/hdmid
