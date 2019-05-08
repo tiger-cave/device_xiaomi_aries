@@ -126,14 +126,11 @@ lib/libOmxWmaDec.so:vendor/lib/libOmxWmaDec.so
 # QMI
 bin/efsks:vendor/bin/efsks
 bin/ks:vendor/bin/ks
-bin/mm-pp-daemon:vendor/bin/mm-pp-daemon
 bin/qcks:vendor/bin/qcks
 bin/qmuxd:vendor/bin/qmuxd
 bin/rmt_storage:vendor/bin/rmt_storage
 -lib/libqminvapi.so:vendor/lib/libqminvapi.so
 vendor/lib/libdiag.so
-vendor/lib/libmm-abl.so
-vendor/lib/libmm-abl-oem.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so

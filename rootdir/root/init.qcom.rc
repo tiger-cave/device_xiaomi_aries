@@ -462,10 +462,6 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
     write /dev/cpuctl/cpu.notify_on_migrate 1
 
-on property:init.svc.surfaceflinger=stopped
-    stop ppd
-    stop hdmid
-
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
@@ -703,17 +699,6 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
 on property:sys.boot_completed=1
     setprop vendor.post_boot.parsed 1
     start qcom-post-boot
-
-service hdmid /system/bin/hdmid
-    class late_start
-    socket hdmid stream 0660 root system graphics
-    disabled
-
-service ppd /vendor/bin/mm-pp-daemon
-    class late_start
-    user system
-    socket pps stream 0660 system system graphics
-    group system graphics
 
 service time_daemon /vendor/bin/time_daemon
    class late_start
