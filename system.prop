@@ -80,11 +80,6 @@ persist.sys.aries.power_profile=middle
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
 
-# USB
-persist.sys.usb.config=mtp
-ro.vold.umsdirtyratio=50
-persist.sys.isUsbOtgEnabled=1
-
 # Gps
 persist.gps.qmienabled=true
 persist.gps.qc_nlp_in_use=0
