@@ -31,7 +31,7 @@ import java.io.File;
 
 public class KeyDisabler {
 
-    private static String KEY_CONTROL_PATH = "/sys/devices/i2c-3/3-004b/disable_keys";
+    private static String KEY_CONTROL_PATH = "/proc/touchscreen/disable_keys";
 
     public static boolean isSupported() {
         return new File(KEY_CONTROL_PATH).exists();
